@@ -13,8 +13,6 @@ function TableHead() {
   );
 }
 
-
-
 function TableBody(props){
     const rows = props.characterData.map((row, index) => {
         return (
@@ -36,8 +34,9 @@ function Table(props){
     return (
         <table>
             <TableHead></TableHead>
-            <TableBody characterData={props.characterData}></TableBody>
-        </table>
+            <TableBody characterData={props.characterData}
+                    removeCharacter={props.removeCharacter}></TableBody>
+        </table> 
     )
 }
 
