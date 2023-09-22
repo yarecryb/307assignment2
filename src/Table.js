@@ -1,7 +1,7 @@
 // src/Table.js
 import React from "react";
 
-function TableHead() {
+function TableHeader() {
   return (
       <thead>
         <tr>
@@ -19,6 +19,12 @@ function TableBody(props){
           <tr key={index}>
             <td>{row.name}</td>
             <td>{row.job}</td>
+            <td>
+                <button onClick={() => 
+                    props.removeCharacter(index)}>
+                    Delete
+                </button>
+            </td>
           </tr>
         );
        }
@@ -33,7 +39,7 @@ function TableBody(props){
 function Table(props){
     return (
         <table>
-            <TableHead></TableHead>
+            <TableHeader/>
             <TableBody characterData={props.characterData}
                     removeCharacter={props.removeCharacter}></TableBody>
         </table> 
